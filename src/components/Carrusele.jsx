@@ -9,7 +9,7 @@ export const Carrusele = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/estadisticas/lastUpdate")
+      .get("http://proyecto-practicas.ddns.net:4000/api/estadisticas/lastUpdate")
       .then((res) => {
         setBdData(res.data);
       })

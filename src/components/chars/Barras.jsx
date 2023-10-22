@@ -34,7 +34,7 @@ export const Barras = ({ edad1, edad2, edad3, edad4 }) => {
           edad4.totalDeDatos,
         ],
         label: [
-          "Edades"
+          "Total de datos",
         ],
         backgroundColor: getDataColors(50),
         borderColor: getDataColors(),
@@ -47,18 +47,18 @@ export const Barras = ({ edad1, edad2, edad3, edad4 }) => {
     responsive: true,
     plugins: {
         legend: {
-            position: "top",
-            labels: {
-                usePointStyle: true,
-                pointStyle: "circle",
-                font: {
-                    size: 14,
-                    weight: "bold",
-                }
-            }
+            display: false
         },
     },
     maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          stepSize: 1
+        }
+      },
+    }
   }
 
   return <Bar data={data} options={options} width={"100%"} height={"100%"} />;
