@@ -8,7 +8,28 @@ export const initData = {
       labels: [],
       fPorcentual: [],
     },
-    edad: {
+    "edad_14-25": {
+      pregunta: "",
+      totalDeDatos: 0,
+      fAbsoluta: [],
+      labels: [],
+      fPorcentual: [],
+    },
+    "edad_26-40": {
+      pregunta: "",
+      totalDeDatos: 0,
+      fAbsoluta: [],
+      labels: [],
+      fPorcentual: [],
+    },
+    "edad_41-55": {
+      pregunta: "",
+      totalDeDatos: 0,
+      fAbsoluta: [],
+      labels: [],
+      fPorcentual: [],
+    },
+    "edad_56-99": {
       pregunta: "",
       totalDeDatos: 0,
       fAbsoluta: [],
@@ -134,5 +155,6 @@ export const initData = {
       labels: [],
       fPorcentual: [],
     },
-  };
+  }
+  
   
