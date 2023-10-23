@@ -1,6 +1,8 @@
 import { getDataColors } from "../helpers/getDataColors";
 
 export const data = (data) => {
+
+
   return {
     labels: data.labels,
     datasets: [
@@ -8,7 +10,11 @@ export const data = (data) => {
         data: data.fAbsoluta,
         backgroundColor: getDataColors(50),
         borderColor: getDataColors(),
-        borderWidth: 1,
+        hoverBackgroundColor: getDataColors(99),
+        hoverOffset: 10,
+        borderWidth: 3,
+        borderAlign: "center",
+        
       },
     ],
   };
@@ -19,15 +25,26 @@ export const options = {
     plugins: {
         legend: {
             position: "top",
+            fontFamily: "sans-serif",
+            
+            
+
             labels: {
                 usePointStyle: true,
+                boxWidth: 100,
+                boxHeight: 100,
+                padding: 20,
+                align: "center",
                 pointStyle: "circle",
+                color: "white",
                 font: {
-                    size: 14,
-                    weight: "bold",
-                }
+                  size: 20,
+                  weight: "bold",
+                },
+                
             }
         },
+            
     },
     maintainAspectRatio: false,
 }

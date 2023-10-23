@@ -9,7 +9,9 @@ export const Carrusele = () => {
 
   useEffect(() => {
     axios
-      .get("http://proyecto-practicas.ddns.net:4000/api/estadisticas/lastUpdate")
+      .get(
+        "http://proyecto-practicas.ddns.net:4000/api/estadisticas/lastUpdate"
+      )
       .then((res) => {
         setBdData(res.data);
       })
@@ -18,19 +20,25 @@ export const Carrusele = () => {
       });
   }, []);
 
- const edad1 = bdData["edad_14-25"];
- const edad2 = bdData["edad_26-40"];
- const edad3 = bdData["edad_41-55"];
- const edad4 = bdData["edad_56-99"];
-
+  const edad1 = bdData["edad_14-25"];
+  const edad2 = bdData["edad_26-40"];
+  const edad3 = bdData["edad_41-55"];
+  const edad4 = bdData["edad_56-99"];
 
   return (
     <>
-      <div id="carouselExampleIndicators" className="carousel slide carousel-fade h-100">
+      <div
+        id="carruselRespuestas"
+        className="carousel slide carousel-fade h-100"
+        data-bs-ride="carousel"
+        data-bs-interval="5000"
+        data-bs-touch="true"
+        data-bs-pause="false"
+      >
         <div className="carousel-indicators">
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target="#carruselRespuestas"
             data-bs-slide-to="0"
             className="active"
             aria-current="true"
@@ -38,26 +46,47 @@ export const Carrusele = () => {
           ></button>
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target="#carruselRespuestas"
             data-bs-slide-to="1"
             aria-label="Slide 2"
           ></button>
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target="#carruselRespuestas"
             data-bs-slide-to="2"
             aria-label="Slide 3"
           ></button>
         </div>
         <div className="carousel-inner h-100 w-100 ">
-          <div className="carousel-item active h-75 " >
-            <Barras edad1={edad1} edad2={edad2}  edad3={edad3} edad4={edad4} className="w-100 h-100" />
+          <div className="carousel-item active h-75 ">
+            <Barras
+              edad1={edad1}
+              edad2={edad2}
+              edad3={edad3}
+              edad4={edad4}
+              className="w-100 h-100"
+            />
+            <div className="carousel-caption position-absolute top-100 d-md-block">
+              <p className="fw-bold fs-1 text-white font-family-sans-serif">
+                Cantidad de participantes por rango de edad
+              </p>
+            </div>
           </div>
           <div className="carousel-item h-75">
-            <Dona bdDatos={bdData.sexo} className="w-100 h-100" />
+            <Dona bdDatos={bdData.sexo} className="w-100 h-100"/>
+            <div className="carousel-caption position-absolute top-100 d-md-block">
+              <p className="fw-bold fs-1 text-white font-family-sans-serif">
+                Cantidad de participantes por sexo
+              </p>
+            </div>
           </div>
           <div className="carousel-item h-75">
-            <Dona bdDatos={bdData.p2} className="w-100 h-100" />
+            <Dona bdDatos={bdData.p1} className="w-100 h-100" />
+            <div className="carousel-caption position-absolute top-100 d-md-block">
+              <p className="fw-bold fs-1 text-white font-family-sans-serif">
+                {bdData.p1.pregunta}
+              </p>
+            </div>
           </div>
         </div>
       </div>
