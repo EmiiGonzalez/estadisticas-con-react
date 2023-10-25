@@ -1,26 +1,14 @@
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend,
-  CategoryScale,
-  LinearScale,
-} from "chart.js";
-import { Doughnut } from "react-chartjs-2";
-import { data } from "./charOptions.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from "react-chartjs-2";
 import Datalabels from "chartjs-plugin-datalabels";
+import { data } from "../chars/charOptions";
 
-ChartJS.register(
-  ArcElement,
-  Tooltip,
-  Legend,
-  CategoryScale,
-  LinearScale,
-  Datalabels
-);
 
-export const Dona = ({ bdDatos }) => {
-  const info = data(bdDatos);
+ChartJS.register(ArcElement, Tooltip, Legend, Datalabels);
+
+export const Pastel = ({ bdDatos }) => {
+  const datos = data(bdDatos);
+
   const options = {
     responsive: true,
     plugins: {
@@ -59,14 +47,14 @@ export const Dona = ({ bdDatos }) => {
     maintainAspectRatio: false,
     display: true,
   };
-  
+
   return (
-    <Doughnut
+    <Pie
+      data={datos}
       options={options}
-      data={info}
       width={"100%"}
       height={"100%"}
-      className="px-1"
+      className=""
     />
   );
 };

@@ -26,9 +26,6 @@ export const options = {
         legend: {
             position: "top",
             fontFamily: "sans-serif",
-            
-            
-
             labels: {
                 usePointStyle: true,
                 boxWidth: 100,
@@ -41,7 +38,6 @@ export const options = {
                   size: 20,
                   weight: "bold",
                 },
-                
             }
         },
             

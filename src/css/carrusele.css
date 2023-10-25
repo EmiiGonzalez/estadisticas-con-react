@@ -1,0 +1,24 @@
+.btn-rounded-circle{
+    width: 15px !important;
+    height: 10px !important;
+    border-radius: 50% !important; 
+}
+
+.redes{
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 576px) {
+    .redes{
+        width: 100%;
+        height: 70vh;
+    }
+    .textoGrafico{
+        font-size: 1.2rem  !important;
+    }
+    .indicadores{
+        margin-bottom: 50px !important;
+    }
+}
+    

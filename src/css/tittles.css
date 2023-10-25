@@ -1,0 +1,8 @@
+
+.legend-item {
+    color: red;
+}
+ /* Tamaño reducido en pantallas pequeñas */  
+  @media (max-width: 576px) {
+    
+  }
