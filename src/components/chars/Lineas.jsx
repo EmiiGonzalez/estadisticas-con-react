@@ -74,7 +74,14 @@ export const Lineas = ({ bdDatos }) => {
       }
     },
     maintainAspectRatio: false,
-
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          stepSize: 1,
+        },
+      },
+    },
     animations: {
       tension: {
         duration: 1500,

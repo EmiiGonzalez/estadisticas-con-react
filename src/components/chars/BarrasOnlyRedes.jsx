@@ -63,7 +63,7 @@ import {
         datalabels: {
           formatter: (value, ctx) => {
             const index = ctx.dataIndex;
-            const porcentaje = data.datasets[0].data[index];
+            const porcentaje = bdDatos.fPorcentual[index];
             return `${porcentaje}%`;
           },
           color: "white",

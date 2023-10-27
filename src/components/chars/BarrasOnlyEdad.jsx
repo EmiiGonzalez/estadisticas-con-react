@@ -56,7 +56,8 @@ export const BarrasOnlyEdad = ({ edad1, edad2, edad3, edad4 }) => {
       datalabels: {
         formatter: (value, ctx) => {
           const index = ctx.dataIndex;
-          const porcentaje = data.datasets[0].data[index];
+          const totalDeDatos = edad1.totalDeDatos + edad2.totalDeDatos + edad3.totalDeDatos + edad4.totalDeDatos;
+          const porcentaje = Math.round((data.datasets[0].data[index] / totalDeDatos) * 100);
           return `${porcentaje}%`;
         },
         color: "white",
